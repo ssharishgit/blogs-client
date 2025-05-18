@@ -9,7 +9,7 @@ const Signup = () => {
   const navigate = useNavigate()
 
   const collectData = async ()=>{
-    let response = await fetch('http://localhost:7001/auth/signup',{
+    let response = await fetch('https://blogs-server-jrvy.onrender.com/auth/signup',{
       method : 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name,email,password }),

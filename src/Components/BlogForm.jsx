@@ -38,14 +38,14 @@ const BlogForm = () => {
     const userToken = localStorage.getItem("token")
     try{
       if(isUpdate && blogId){
-        let res = await axios.put(`http://localhost:7001/blogs/${blogId}`, blogData, {
+        let res = await axios.put(`https://blogs-server-jrvy.onrender.com/blogs/${blogId}`, blogData, {
           headers: { Authorization: `Bearer ${userToken}` }
         })
         if(res.data.message === "Blog upadated successfully"){
           alert(res.data.message)
         }
       }else{
-        let res = await axios.post(`http://localhost:7001/blogs`, blogData, {
+        let res = await axios.post(`https://blogs-server-jrvy.onrender.com/blogs`, blogData, {
           headers: { Authorization: `Bearer ${userToken}` } 
         })
         if(res.data.message === "Blog created successfully"){

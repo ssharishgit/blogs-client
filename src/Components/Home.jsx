@@ -11,7 +11,7 @@ const Home = () => {
     const getAllBlogs = async ()=> {
       try{
         const userToken = localStorage.getItem("token")
-        let res = await axios.get(`http://localhost:7001/blogs`, {
+        let res = await axios.get(`https://blogs-server-jrvy.onrender.com/blogs`, {
           headers: { Authorization: `Bearer ${userToken}` }
         })
         setBlogsList(res.data)

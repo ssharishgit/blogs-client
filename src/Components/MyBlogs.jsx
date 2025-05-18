@@ -11,7 +11,7 @@ const MyBlogs = () => {
     const fetchUserBlogs = async ()=> {
       try{
         const userToken = localStorage.getItem("token")
-        let res = await axios.get(`http://localhost:7001/myblogs`, {
+        let res = await axios.get(`https://blogs-server-jrvy.onrender.com/myblogs`, {
           headers: { Authorization: `Bearer ${userToken}` }
         })
         setUserBlogs(res.data)
@@ -30,7 +30,7 @@ const MyBlogs = () => {
   const deleteBlog = async (id)=> {
     try{
       const userToken = localStorage.getItem("token")
-      let res = await axios.delete(`http://localhost:7001/blogs/${id}`, {
+      let res = await axios.delete(`https://blogs-server-jrvy.onrender.com/blogs/${id}`, {
         headers: { Authorization: `Bearer ${userToken}` }
       })
       if(res.data.message === "Blog deleted successfully"){

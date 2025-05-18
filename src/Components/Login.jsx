@@ -9,7 +9,7 @@ export const Login = ({ loggedIn }) =>{
 
   const signin = async ()=> {
     try{
-      let res = await fetch('http://localhost:7001/auth/login',{
+      let res = await fetch('https://blogs-server-jrvy.onrender.com/auth/login',{
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email,password })
